@@ -1,0 +1,1 @@
+Create a new REST API endpoint for managing users. Each user should have the following properties: name (string) and email (string). Implement standard CRUD operations (Create, Read, Update, Delete) and ensure the API follows RESTful conventions.
