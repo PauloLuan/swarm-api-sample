@@ -1,98 +1,175 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Swarm API Sample
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A NestJS project powered by an intelligent swarm of AI agents with persistent memory capabilities.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Overview
 
-## Description
+This project leverages a collaborative swarm of AI agents. Each agent has memory persistence, allowing them to maintain context and share knowledge across sessions.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### How It Works
 
-## Project setup
+The project uses a swarm-based architecture where:
 
+- **Multiple AI agents** collaborate to complete development tasks
+- **Persistent memory** ensures agents remember previous work and decisions
+- **Task distribution** happens automatically based on agent specialization
+- **Knowledge sharing** occurs through shared memory storage
+
+Simply describe your task in the `prompt.txt` file, run `yarn task`, and watch as the swarm of agents collaborates to implement it.
+
+## Agent System
+
+### Available Agents
+
+The system dynamically spawns specialized agents based on task requirements:
+
+- **Architect Agent**: Designs system architecture and high-level solutions
+- **Backend Developer Agent**: Implements API endpoints, services, and business logic
+- **Frontend Developer Agent**: Creates UI components and client-side functionality
+- **Database Agent**: Manages data models, migrations, and queries
+- **Testing Agent**: Writes unit tests, integration tests, and E2E tests
+- **Documentation Agent**: Creates and maintains documentation
+- **DevOps Agent**: Handles deployment, CI/CD, and infrastructure
+- **Code Reviewer Agent**: Reviews code quality and suggests improvements
+
+### Memory System
+
+Agents store their state and knowledge in:
+- `memory/agents/`: Individual agent memory storage
+- `memory/sessions/`: Session-specific data
+- `coordination/`: Inter-agent coordination data
+
+## Quick Start
+
+### Using the Agent Swarm
+
+1. **Define your task** in `prompt.txt`:
+   ```
+   Create a new REST API endpoint for managing users...
+   ```
+
+2. **Run the swarm**:
+   ```bash
+   yarn task
+   ```
+
+3. **Watch the agents work**: The swarm will automatically:
+   - Analyze the task
+   - Spawn necessary specialized agents
+   - Distribute work among agents
+   - Implement the solution
+   - Test and validate the implementation
+
+### Additional Options
+
+You can pass additional flags to the swarm:
 ```bash
-$ yarn install
+yarn task --help              # Show available options
+yarn task --no-auto-spawn     # Disable automatic agent spawning
+yarn task --no-verbose        # Reduce output verbosity
 ```
 
-## Compile and run the project
+## Running the NestJS Application
+
+### Prerequisites
+
+- Node.js (v22 or higher)
+- Yarn package manager
+
+### Installation
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+yarn install
 ```
 
-## Run tests
+### Development
 
 ```bash
-# unit tests
-$ yarn run test
+# Start in development mode
+yarn start
 
-# e2e tests
-$ yarn run test:e2e
+# Start with hot-reload (watch mode)
+yarn start:dev
 
-# test coverage
-$ yarn run test:cov
+# Start with debugging enabled
+yarn start:debug
 ```
 
-## Deployment
+The application will be available at `http://localhost:3000`
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Production
 
 ```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
+# Build the project
+yarn build
+
+# Run in production mode
+yarn start:prod
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Testing
+
+```bash
+# Run unit tests
+yarn test
+
+# Run unit tests in watch mode
+yarn test:watch
+
+# Run E2E tests
+yarn test:e2e
+
+# Generate test coverage report
+yarn test:cov
+```
+
+### Code Quality
+
+```bash
+# Format code
+yarn format
+
+# Lint and fix issues
+yarn lint
+```
+
+## Project Structure
+
+```
+├── coordination/         # Agent coordination and orchestration
+│   ├── memory_bank/     # Shared memory storage
+│   ├── orchestration/   # Task distribution logic
+│   └── subtasks/        # Decomposed task tracking
+├── memory/              # Agent memory system
+│   ├── agents/          # Individual agent memories
+│   └── sessions/        # Session data
+├── scripts/             # Utility scripts
+│   └── run-claude-flow.mjs  # Agent swarm launcher
+├── src/                 # NestJS application source
+├── test/                # Test files
+├── prompt.txt           # Task definition for agents
+└── README.md           # This file
+```
+
+## How the Swarm Works
+
+1. **Task Input**: You define tasks in `prompt.txt`
+2. **Orchestration**: The main orchestrator analyzes the task complexity
+3. **Agent Spawning**: Specialized agents are spawned based on requirements
+4. **Collaboration**: Agents work together, sharing context through memory
+5. **Implementation**: Code is written, tested, and validated
+6. **Persistence**: All agent learnings are saved for future tasks
 
 ## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- [NestJS Documentation](https://docs.nestjs.com)
+- [Claude-Flow Documentation](https://github.com/anthropics/claude-flow)
+- [Project Issues](https://github.com/pauloluan/swarm-api-sample/issues)
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is [MIT licensed](LICENSE).
+
+## Author
+
+**Paulo Luan** - Creator and maintainer of this project
